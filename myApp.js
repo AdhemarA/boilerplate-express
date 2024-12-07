@@ -2,8 +2,8 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
-app.use((this.request, response, next) => { console.log(this.request.method + " "
-      + this.request.path + "-" + this.request.ip)});
+app.use(( request, response, next) => { console.log(request.method + " "
+      + request.path + " - " + request.ip); next() });
 /* app.get( "/", function( req, res){
    res.send( "Hello Express");
 });*/
