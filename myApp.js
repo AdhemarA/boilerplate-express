@@ -15,7 +15,6 @@ app.get( "/", ( request, response) =>{
 app.use("/public", express.static(__dirname + "/public"));
 let jsonMessag = {};
 let prueba= process.env.MESSAGE_STYLE; 
-console.log( process.env);
 process.env.MESSAGE_STYLE === "uppercase" ? jsonMessag= { "message" : "HELLO JSON" }: jsonMessag = { "message" : "Hello json" };
 app.get( "/json", ( request, response) =>{
    response.json(jsonMessag );
