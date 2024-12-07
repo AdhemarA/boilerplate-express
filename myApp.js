@@ -42,6 +42,11 @@ app.get( "/name", ( request, response) =>{
    let reqPerson = request.query.first + " " + request.query.last;
    response.json({ name: reqPerson} );
  });
+
+ app.post( "/name", bodyParser.urlencoded( {extended: false}),
+    ( request, response) =>{ let reqPerson = request.query.first + " " + request.query.last;
+      response.json({ name: reqPerson} );
+    });
  
 
 
