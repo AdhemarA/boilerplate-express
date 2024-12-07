@@ -1,12 +1,15 @@
 require('dotenv').config();
 let express = require('express');
 let app = express();
-console.log( "Hello World");
 
+app.use((this.request, response, next) => { console.log(this.request.method + " "
+      + this.request.path + "-" + this.request.ip)});
 /* app.get( "/", function( req, res){
    res.send( "Hello Express");
 });*/
-  
+
+console.log( "Hello World");
+
 app.get( "/", ( request, response) =>{
    response.sendFile(__dirname + "/views/index.html" );
 });
