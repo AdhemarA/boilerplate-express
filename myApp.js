@@ -33,7 +33,7 @@ app.get( "/now", ( request, response, next ) =>{
    (request, response ) => response.json({"time": request.time}));
 
 app.get( "/:word/echo", ( request, response) =>{
-  response.json({ echo: request.params.echo} );
+  response.json({ echo: request.params.word} );
 });
 
 
