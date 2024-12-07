@@ -1,5 +1,6 @@
 require('dotenv').config();
 let express = require('express');
+let bodyParser = require('body-parser');
 let app = express();
 
 app.use(( request, response, next) => { console.log(request.method + " "
@@ -8,6 +9,7 @@ app.use(( request, response, next) => { console.log(request.method + " "
    res.send( "Hello Express");
 });*/
 
+app.use(bodyParser.urlencoded( {extended: false}) );
 console.log( "Hello World");
 
 app.get( "/", ( request, response) =>{
@@ -41,7 +43,6 @@ app.get( "/name", ( request, response) =>{
    response.json({ name: reqPerson} );
  });
  
-
 
 
 
