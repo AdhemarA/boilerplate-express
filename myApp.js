@@ -13,11 +13,17 @@ app.get( "/", ( request, response) =>{
 
 //app.use( express.static(__dirname + "/public"));
 app.use("/public", express.static(__dirname + "/public"));
-let jsonMessag = {};
-let prueba= process.env.MESSAGE_STYLE; 
-process.env.MESSAGE_STYLE === "uppercase" ? jsonMessag= { "message" : "HELLO JSON" }: jsonMessag = { "message" : "Hello json" };
+let message = { "message" : "Hello json"};
 app.get( "/json", ( request, response) =>{
-   response.json(jsonMessag );
+   response.json(message );
+});
+
+app.get( "/json", ( request, response) =>{
+   if( process.env.MESSAGE_STYLE === "uppercase"){
+     response.json({ "message": "HELLO JSON"} );
+   }else {
+     response.json( message );
+   }
 });
 
 
