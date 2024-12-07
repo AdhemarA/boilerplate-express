@@ -21,9 +21,11 @@ let jsonMessag = { "message" : "Hello json" };
 
 app.get( "/json", ( request, response) =>{
    if(process.env.MESSAGE_STYLE === "uppercase"){
-      response.json( { "message": "HELLO JSON"} );
+      jsonMessag = { "message" : "HELLO JSON" };
       console.log( "step 1");
-   }else { response.json({ "message": "Hello json"});
+   }else{
+      jsonMessag = { "message": "Hello json"};
+   console.log( "step 2");
    };
 });
 
