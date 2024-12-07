@@ -36,7 +36,11 @@ app.get( "/:word/echo", ( request, response) =>{
   response.json({ echo: request.params.word} );
 });
 
-
+app.get( "/name", ( request, response) =>{
+   let reqPerson = request.query.first + " " + request.query.last;
+   response.json({ name: reqPerson} );
+ });
+ 
 
 
 
